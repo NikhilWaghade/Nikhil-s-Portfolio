@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+/* Animation for floating (up and down) */
+@keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px); /* Moves up */
+    }
+    100% {
+      transform: translateY(0px); /* Moves back down */
+    }
+  }
+  
+  /* Animation for flashing text color */
+  @keyframes colorFlash {
+    0%, 100% {
+      color: #ffffff;
+    }
+    50% {
+      color: #24CFA6;
+    }
+  }
+
+  /* Custom classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-text-flash {
+    animation: colorFlash 2s ease-in-out infinite;
+  }
+  
+  .animated-bg {
+    /* background: linear-gradient(-45deg, #000000, #000000, #24CFA6); */
+    background-size: 300% 300%;
+    animation: animatedGradient 10s ease infinite;
+  }
+  
+  /* Hover Effect for Image */
+  .hover\:scale-105:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    transition: transform 0.3s ease-in-out;
+  }
+
+
+
+  
+  
+  /* // index.css (Bubble Animation Section) */
+  @keyframes bubble {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-1000px) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  @layer utilities {
+    .animate-bubble {
+      animation: bubble 10s infinite ease-in;
+    }
+  }
+  
