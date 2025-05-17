@@ -46,11 +46,11 @@ const Navbar = () => {
         {menuOpen && (
           <div className="md:hidden bg-white dark:bg-gray-900 px-4 pb-4">
             <nav className="flex flex-col space-y-4 text-gray-700 dark:text-gray-200 text-sm font-medium">
-              <a onClick={toggleMenu} href="#hero" className="hover:text-indigo-600">Home</a>
-              <a onClick={toggleMenu} href="#about" className="hover:text-indigo-600">About Me</a>
-              <a onClick={toggleMenu} href="#projects" className="hover:text-indigo-600">Projects</a>
-              <a onClick={toggleMenu} href="#experience" className="hover:text-indigo-600">Edu & Exp</a>
-              <a onClick={toggleMenu} href="#contact" className="hover:text-indigo-600">Contact</a>
+              <a onClick={toggleMenu} href="#hero" className="hover:text-[#24CFA6]">Home</a>
+              <a onClick={toggleMenu} href="#about" className="hover:text-[#24CFA6]">About Me</a>
+              <a onClick={toggleMenu} href="#projects" className="hover:text-[#24CFA6]">Projects</a>
+              <a onClick={toggleMenu} href="#experience" className="hover:text-[#24CFA6]">Edu & Exp</a>
+              <a onClick={toggleMenu} href="#contact" className="hover:text-[#24CFA6]">Contact</a>
             </nav>
           </div>
         )}
