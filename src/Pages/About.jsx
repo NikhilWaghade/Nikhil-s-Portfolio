@@ -54,7 +54,7 @@ const About = () => {
         {/* Left Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           <motion.img
-            src="src/assets/self.jpg"
+            src="src\assets\nikhil passport.jpg"
             alt="Developer"
             className="rounded-lg shadow-lg object-cover animate-float hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:border-4 hover:border-[#24CFA6] "
             style={{ width: "350px", height: "430px" }}

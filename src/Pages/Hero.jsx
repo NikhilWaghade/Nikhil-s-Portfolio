@@ -1,6 +1,8 @@
 // Hero.jsx
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,36 +38,71 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 mt-28">
-        <motion.div
-          className="w-full text-center md:text-left px-4"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1
-            className="text-4xl md:text-5xl font-bold mb-4 animate-text-flash hover:text-[#24CFA6] transition-colors"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Hi, I'm Nikhil
-          </motion.h1>
+     <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 mt-28 px-4">
+  {/* Left Side: Text Content */}
+<motion.div
+  className="w-full md:w-1/2 text-center md:text-left"
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <motion.h1
+    className="text-4xl md:text-5xl font-bold mb-4 animate-text-flash hover:text-[#24CFA6] transition-colors"
+    initial={{ opacity: 0, x: -50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <Typewriter
+      words={["Hi, I'm Nikhil", "Full stack developer"]}
+      loop={0}            // types once then stops, remove or set >0 to loop
+      cursor
+      cursorStyle="|"
+      typeSpeed={100}
+      deleteSpeed={50}
+      delaySpeed={1500}   // delay before typing next word
+    />
+  </motion.h1>
 
-          <div className="mt-4 text-4xl text-gray-300">{/* Typewriter here */}</div>
+  <div className="mt-4 text-4xl text-gray-300">{/* You can add more text or animations here */}</div>
 
-          <p className="text-3xl text-gray-200 leading-relaxed max-w-5xl mx-auto md:mx-0">
-            I specialize in crafting modern, scalable, and responsive web applications. From intuitive front-end interfaces using React to robust backend systems with Node.js, MongoDB, and Express, I deliver complete solutions optimized for performance and user experience.
-          </p>
+  <p className="text-3xl text-gray-200 leading-relaxed max-w-2xl mx-auto md:mx-0">
+    I specialize in crafting modern, scalable, and responsive web applications. From intuitive front-end interfaces using React to robust backend systems with Node.js, MongoDB, and Express, I deliver complete solutions optimized for performance and user experience.
+  </p>
 
-          <a
-            href="#projects"
-            className="mt-6 inline-block px-6 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition"
-          >
-            View Projects
-          </a>
-        </motion.div>
-      </div>
+  <a
+    href="#projects"
+    className="mt-6 inline-block px-6 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+  >
+    View Projects
+  </a>
+</motion.div>
+
+  {/* Right Side: Image */}
+<motion.div
+  className="w-full md:w-1/2 flex justify-center md:justify-end "
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1, delay: 0.5 }}
+>
+  <img
+    src="src/assets/nikhil passport.jpg"
+    alt="Developer"
+    className="decagon-img object-cover hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:border-4 hover:border-[#24CFA6] rounded-lg"
+    style={{ width: "350px", height: "430px" }}
+  />
+</motion.div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
     </section>
   );
 };
