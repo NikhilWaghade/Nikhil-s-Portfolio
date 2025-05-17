@@ -23,11 +23,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-700 dark:text-gray-200">
-            <a href="#hero" className="hover:text-indigo-600">Home</a>
-            <a href="#about" className="hover:text-indigo-600">About Me</a>
-            <a href="#projects" className="hover:text-indigo-600">Projects</a>
-            <a href="#experience" className="hover:text-indigo-600">Edu & Exp</a>
-            <a href="#contact" className="hover:text-indigo-600">Contact</a>
+            <a href="#hero" className="hover:text-[#24CFA6]">Home</a>
+            <a href="#about" className="hover:text-[#24CFA6]">About Me</a>
+            <a href="#projects" className="hover:text-[#24CFA6]">Projects</a>
+            <a href="#experience" className="hover:text-[#24CFA6]">Edu & Exp</a>
+            <a href="#contact" className="hover:text-[#24CFA6]">Contact</a>
           </nav>
 
           {/* Mobile Menu Button */}
