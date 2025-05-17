@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { GraduationCap, School, Calendar, Percent } from 'lucide-react';
+import diploma from '../assets/Diploma certificate.jpg'
+import tally from '../assets/Tally Certificate.jpg'
+import fullstack from '../assets/Full Stack Certificate.jpg'
+import intership from '../assets/Intership Certificate.jpg'
+import network from '../assets/Network & CCNA.jpg'
+import hackathon1 from '../assets/Hackathon1st(SVP CLG).jpg'
+import hackathon2 from '../assets/Hackathon2nd(Sheriyansh with Bansal).jpg'
 
 
 const Experience = () => {
@@ -103,16 +110,17 @@ const Experience = () => {
             <h3 className="text-xl font-semibold text-[#24CFA6] mb-2">Diploma - Govt Polytechnic College Balaghat</h3>
             <p className="text-sm">Batch: 2019 - 2021</p>
             <img
-              src="src\assets\Diploma certificate.jpg"
+              src={diploma}
               alt="Diploma Certificate"
               className="mt-4 rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
             />
           </div>
+          {/* tally  */}
           <div className="relative z-10 hover:scale-105 transition-transform duration-300">
             <h3 className="text-xl font-semibold text-[#24CFA6] mb-2">Tally Advance - Basic Computer Balaghat</h3>
             <p className="text-sm">Batch: 2021 </p>
             <img
-              src="src\assets\Tally Certificate.jpg"
+              src={tally}
               alt="Diploma Certificate"
               className="mt-4 rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
             />
@@ -142,17 +150,18 @@ const Experience = () => {
                   Completed Courses Certificate
                 </h3>
                 <img
-                  src="src\assets\Full Stack Certificate.jpg"
+                  src={fullstack}
                   alt="Courses Certificate"
                   className="rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
                 />
               </div>
+
               <div className="hover:scale-105 transition-transform duration-300">
                 <h3 className="text-lg font-semibold text-[#24CFA6] mb-2">
                   Internship Certificate
                 </h3>
                 <img
-                  src="src\assets\Intership Certificate.jpg"
+                  src={intership}
                   alt="Internship Certificate"
                   className="rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
                 />
@@ -162,7 +171,7 @@ const Experience = () => {
                    Network ,CCNA & Cloud Certificate
                 </h3>
                 <img
-                  src="src\assets\Network & CCNA.jpg"
+                  src={network}
                   alt="Internship Certificate"
                   className="rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
                 />
@@ -181,7 +190,7 @@ const Experience = () => {
                 2021 State Level Hackathon - Sardar VallabhBhai Patel Polytechnic College Bhopal
               </h4>
               <img
-                src="src\assets\Hackathon1st(SVP CLG).jpg"
+                src={hackathon1}
                 alt="2021 Hackathon Certificate"
                 className="rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
               />
@@ -191,7 +200,7 @@ const Experience = () => {
                 2025 State Level Hackathon - Bansal Institute of Science Technology Bhopal
               </h4>
               <img
-                src="src\assets\Hackathon2nd(Sheriyansh with Bansal).jpg"
+                src={hackathon2}
                 alt="2025 Hackathon Certificate"
                 className="rounded-lg shadow-md w-full h-auto hover:shadow-xl transition-shadow"
               />

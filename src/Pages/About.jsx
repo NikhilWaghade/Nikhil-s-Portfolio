@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaWordpress, FaFigma, FaWhatsapp, FaGithub, FaInstagram } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiMongodb, SiWoocommerce, SiElementor, SiCanva } from "react-icons/si";
+import selfimg from '../assets/nikhil passport.jpg'
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +55,7 @@ const About = () => {
         {/* Left Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           <motion.img
-            src="src\assets\nikhil passport.jpg"
+          src={selfimg}
             alt="Developer"
             className="rounded-lg shadow-lg object-cover animate-float hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:border-4 hover:border-[#24CFA6] "
             style={{ width: "350px", height: "430px" }}

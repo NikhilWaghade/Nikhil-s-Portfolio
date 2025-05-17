@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from '../assets/logo.jpg'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
         {/* Logo with Link */}
         <Link to="#hero" className="flex items-center space-x-2">
           <img
-            src="src\assets\logo.jpg" // Make sure this is in public folder
+            src={logo}
             alt="Nikhil Logo"
             className="h-10 w-10 rounded-full object-cover"
           />

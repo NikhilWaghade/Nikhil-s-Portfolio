@@ -1,7 +1,7 @@
-// Hero.jsx
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from 'react-simple-typewriter'
+import selfimg from '../assets/nikhil passport.jpg'
 
 
 const Hero = () => {
@@ -54,12 +54,12 @@ const Hero = () => {
   >
     <Typewriter
       words={["Hi, I'm Nikhil", "Full stack developer"]}
-      loop={0}            // types once then stops, remove or set >0 to loop
+      loop={0}           
       cursor
       cursorStyle="|"
       typeSpeed={100}
       deleteSpeed={50}
-      delaySpeed={1500}   // delay before typing next word
+      delaySpeed={1500}   
     />
   </motion.h1>
 
@@ -85,7 +85,7 @@ const Hero = () => {
   transition={{ duration: 1, delay: 0.5 }}
 >
   <img
-    src="src/assets/nikhil passport.jpg"
+    src={selfimg}
     alt="Developer"
     className="decagon-img object-cover hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:border-4 hover:border-[#24CFA6] rounded-lg"
     style={{ width: "350px", height: "430px" }}
