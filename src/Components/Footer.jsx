@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Only needed if you're linking internally
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
@@ -14,6 +13,7 @@ const Footer = () => {
             href="https://github.com/NikhilWaghade"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="hover:text-indigo-500 transition-colors"
           >
             <FaGithub />
@@ -22,12 +22,14 @@ const Footer = () => {
             href="https://www.linkedin.com/in/nikhilwaghade"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="hover:text-indigo-500 transition-colors"
           >
             <FaLinkedin />
           </a>
           <a
             href="mailto:nikkuwaghade@gmail.com"
+            aria-label="Email"
             className="hover:text-indigo-500 transition-colors"
           >
             <FaEnvelope />

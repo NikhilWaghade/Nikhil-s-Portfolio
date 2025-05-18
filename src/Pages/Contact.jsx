@@ -34,6 +34,25 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative py-20 px-4 bg-white dark:bg-gray-900 overflow-hidden">
+      {/* Inline bubble animation style */}
+      <style>{`
+        @keyframes bubble {
+          0% {
+            transform: translateY(0);
+            opacity: 0.6;
+          }
+          100% {
+            transform: translateY(-600px);
+            opacity: 0;
+          }
+        }
+        .animate-bubble {
+          animation-name: bubble;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+      `}</style>
+
       {/* Bubble Background */}
       <div className="bubble-container absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -51,7 +70,7 @@ const Contact = () => {
         ))}
       </div>
 
-      {/* Popup */}
+      {/* Popup Notification */}
       {popup.show && (
         <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
           <div className={`px-6 py-4 rounded-md text-white ${popup.type === "success" ? "bg-green-600" : "bg-red-600"}`}>
@@ -62,18 +81,19 @@ const Contact = () => {
 
       {/* Form Content */}
       <div className="max-w-3xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-6">Contact Me</h2>
+        <h2 className="text-3xl font-bold text-indigo-600 dark:text-[#24CFA6] mb-6">Contact Me</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-8">
           I'm open to freelance, full-time, or collaboration opportunities. Let's connect!
         </p>
 
-        <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
+        <form ref={formRef} onSubmit={sendEmail} className="space-y-4" noValidate>
           <input
             type="text"
             name="user_name"
             placeholder="Your Name"
             required
             className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            aria-label="Your Name"
           />
           <input
             type="email"
@@ -81,6 +101,7 @@ const Contact = () => {
             placeholder="Your Email"
             required
             className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            aria-label="Your Email"
           />
           <textarea
             name="message"
@@ -88,6 +109,7 @@ const Contact = () => {
             required
             rows="4"
             className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            aria-label="Your Message"
           />
           <button
             type="submit"
