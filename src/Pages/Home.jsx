@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from 'react-simple-typewriter';
 
-import selfimg from '../assets/Nikhil_img (1).jpg';
 import About from './About';
 import Projects from './Projects';
 import Experience from './Experience';
@@ -27,83 +26,78 @@ const Home = ({ menuOpen }) => {
 
   return (
     <>
-      <section
-        id="hero"
-        className={`relative px-4 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-300 ${
-          menuOpen ? "pt-[280px]" : "pt-[120px] md:pt-[140px]"
-        } pb-20`}
+ <section
+  id="hero"
+  className={`relative px-4 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-300 ${
+    menuOpen ? "pt-[280px]" : "pt-[160px] md:pt-[200px]"
+  } pb-32 min-h-screen`}
+>
+  {/* Bubble Background */}
+  <div className="bubble-container absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-100">
+    {Array.from({ length: 20 }).map((_, i) => (
+      <div
+        key={i}
+        className="bubble rounded-full bg-[#24CFA6] absolute bottom-[-150px] opacity-60 animate-bubble"
+        style={{
+          width: `${20 + Math.random() * 40}px`,
+          height: `${20 + Math.random() * 40}px`,
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 10}s`,
+          animationDuration: `${10 + Math.random() * 10}s`,
+        }}
+      />
+    ))}
+  </div>
+
+  {/* Full-width Text Content */}
+  <div className="relative z-10 max-w-4xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-white animate-text-flash hover:text-[#24CFA6] transition-colors">
+        Hi, I'm Nikhil
+      </h1>
+
+      <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
+        <Typewriter
+          words={["Full Stack Developer"]}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={1500}
+        />
+      </h2>
+
+      <h2 className="text-2xl md:text-4xl font-semibold text-white mb-6">
+        <Typewriter
+          words={["Building Scalable Web Apps", "Delivering Modern UI/UX"]}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={2000}
+        />
+      </h2>
+
+      <p className="text-xl md:text-2xl font-medium text-gray-300 leading-relaxed max-w-3xl mx-auto mb-6">
+        I specialize in crafting modern, scalable, and responsive web applications that deliver exceptional user experiences across platforms.
+      </p>
+
+      <a
+        href="#projects"
+        className="inline-block px-8 py-3 bg-white text-black text-lg font-semibold rounded-lg hover:bg-gray-200 transition duration-300"
       >
-        {/* Bubble Background */}
-        <div className="bubble-container absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-100">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="bubble rounded-full bg-[#24CFA6] absolute bottom-[-150px] opacity-60 animate-bubble"
-              style={{
-                width: `${20 + Math.random() * 40}px`,
-                height: `${20 + Math.random() * 40}px`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${10 + Math.random() * 10}s`,
-              }}
-            />
-          ))}
-        </div>
+        View Projects
+      </a>
+    </motion.div>
+  </div>
+</section>
 
-        {/* Main Content */}
-        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 mt-10">
-          {/* Left */}
-          <motion.div
-            className="w-full md:w-1/2 text-center md:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-4 animate-text-flash hover:text-[#24CFA6] transition-colors"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Typewriter
-                words={["Hi, I'm Nikhil", "Full stack developer"]}
-                loop={0}
-                cursor
-                cursorStyle="|"
-                typeSpeed={100}
-                deleteSpeed={50}
-                delaySpeed={1500}
-              />
-            </motion.h1>
-
-            <p className="text-3xl text-gray-200 leading-relaxed max-w-2xl mx-auto md:mx-0">
-              I specialize in crafting modern, scalable, and responsive web applications...
-            </p>
-
-            <a
-              href="#projects"
-              className="mt-6 inline-block px-6 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition"
-            >
-              View Projects
-            </a>
-          </motion.div>
-
-          {/* Right */}
-          <motion.div
-            className="w-full md:w-1/2 flex justify-center md:justify-end"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <img
-              src={selfimg}
-              alt="Developer"
-              className="decagon-img object-cover hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:border-4 hover:border-[#24CFA6] rounded-lg"
-              style={{ width: "350px", height: "430px" }}
-            />
-          </motion.div>
-        </div>
-      </section>
 
       {/* Other sections included directly here */}
       <About />
