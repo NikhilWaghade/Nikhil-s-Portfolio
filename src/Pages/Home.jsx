@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Typewriter } from 'react-simple-typewriter';
 
 import About from './About';
-import Projects from './Projects';
 import Experience from './Experience';
+import Projects from './Projects';
 import Contact from './Contact';
 
 const Home = ({ menuOpen }) => {
@@ -28,7 +28,7 @@ const Home = ({ menuOpen }) => {
     <>
  <section
   id="hero"
-  className={`relative px-4 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-300 ${
+  className={`relative px-4  bg-gray-900 overflow-hidden transition-all duration-300 ${
     menuOpen ? "pt-[280px]" : "pt-[160px] md:pt-[200px]"
   } pb-32 min-h-screen`}
 >
@@ -101,8 +101,8 @@ const Home = ({ menuOpen }) => {
 
       {/* Other sections included directly here */}
       <About />
-      <Projects />
       <Experience />
+      <Projects />
       <Contact />
     </>
   );

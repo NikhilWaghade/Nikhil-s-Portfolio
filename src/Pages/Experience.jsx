@@ -29,7 +29,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-20 px-4 bg-white dark:bg-gray-900 overflow-hidden"
+      className="relative py-20 px-4 bg-gray-900 overflow-hidden"
     >
       {/* Bubble Background */}
       <div
@@ -203,7 +203,7 @@ const Experience = () => {
           </h3>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="hover:scale-105 transition-transform duration-300">
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
+              <h4 className="text-lg font-semibold text-gray-200 dark:text-white mb-2">
                 2021 State Level Hackathon - Sardar VallabhBhai Patel Polytechnic College Bhopal
               </h4>
               <img
@@ -213,7 +213,7 @@ const Experience = () => {
               />
             </div>
             <div className="hover:scale-105 transition-transform duration-300">
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
+              <h4 className="text-lg font-semibold text-gray-200 dark:text-white mb-2">
                 2025 State Level Hackathon - Bansal Institute of Science Technology Bhopal
               </h4>
               <img

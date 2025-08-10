@@ -33,7 +33,7 @@ const Contact = () => {
   }, [popup.show]);
 
   return (
-    <section id="contact" className="relative py-20 px-4 bg-white dark:bg-gray-900 overflow-hidden">
+    <section id="contact" className="relative py-20 px-4 bg-gray-900 overflow-hidden">
       {/* Inline bubble animation style */}
       <style>{`
         @keyframes bubble {
@@ -81,8 +81,8 @@ const Contact = () => {
 
       {/* Form Content */}
       <div className="max-w-3xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl font-bold text-indigo-600 dark:text-[#24CFA6] mb-6">Contact Me</h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-8">
+        <h2 className="text-3xl font-bold text-purple-500 dark:text-[#24CFA6] mb-6">Contact Me</h2>
+        <p className="text-gray-200 dark:text-gray-200 mb-8">
           I'm open to freelance, full-time, or collaboration opportunities. Let's connect!
         </p>
 

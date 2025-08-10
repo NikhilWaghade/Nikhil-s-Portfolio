@@ -3,12 +3,12 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 text-center py-6 mt-20">
+    <footer className="bg-gray-800 text-center py-6 ">
       <div className="max-w-7xl mx-auto px-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-sm text-gray-200 dark:text-gray-300">
           © {new Date().getFullYear()} Nikhil. All rights reserved.
         </p>
-        <div className="flex justify-center space-x-6 mt-3 text-gray-600 dark:text-gray-300 text-xl">
+        <div className="flex justify-center space-x-6 mt-3 text-gray-200 dark:text-gray-300 text-xl">
           <a
             href="https://github.com/NikhilWaghade"
             target="_blank"

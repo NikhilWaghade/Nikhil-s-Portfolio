@@ -47,7 +47,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-20 px-4 bg-white dark:bg-gray-900 overflow-hidden"
+      className="relative py-20 px-4 bg-gray-900 overflow-hidden"
     >
       {/* Bubble Background */}
       <div
@@ -96,7 +96,7 @@ const About = () => {
             About Me
           </h2>
 
-          <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+          <p className="text-gray-100 dark:text-gray-300 mb-4 leading-relaxed">
             Hello, I am <strong className="text-2xl">Nikhil Waghade</strong>.
             <br />
             "I'm dedicated to developing a cutting-edge, personalized learning
@@ -117,7 +117,7 @@ const About = () => {
               href="https://www.linkedin.com/in/nikhilwaghade"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:text-[#24CFA6] transition-colors"
+              className="flex items-center gap-2 text-purple-600 dark:text-indigo-400 hover:text-[#24CFA6] transition-colors"
             >
               <FaLinkedin /> LinkedIn
             </a>
@@ -133,7 +133,7 @@ const About = () => {
               href="https://github.com/NikhilWaghade"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-800 dark:text-white hover:text-[#24CFA6] transition-colors"
+              className="flex items-center gap-2 text-gray-200 dark:text-white hover:text-[#24CFA6] transition-colors"
             >
               <FaGithub /> GitHub
             </a>
@@ -151,7 +151,7 @@ const About = () => {
 
       {/* Skill Bars */}
       <div className="mt-8 max-w-xl mx-auto">
-        <h4 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200 mb-6">
+        <h4 className="text-2xl font-bold text-center text-purple-500 dark:text-gray-200 mb-6">
           Work Experience Technologies
         </h4>
         {skills.map((skill, index) => (

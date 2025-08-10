@@ -48,7 +48,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative py-20 px-4 bg-white dark:bg-gray-900 overflow-hidden"
+      className="relative py-20 px-4 bg-gray-900 overflow-hidden"
     >
       {/* Inline style for bubble animation */}
       <style>{`
