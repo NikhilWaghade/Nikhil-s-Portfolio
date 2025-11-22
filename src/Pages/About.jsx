@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {  FaLinkedin,  FaHtml5,  FaCss3Alt,FaBootstrap,  FaJsSquare,  FaReact,  FaNodeJs,  FaWordpress,  FaFigma,  FaWhatsapp,  FaGithub,  FaInstagram,} from "react-icons/fa";
 import { SiTailwindcss, SiMongodb,} from "react-icons/si";
@@ -47,24 +48,36 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-20 px-4 bg-gray-900 overflow-hidden"
+      className="relative py-20 px-4 bg-gradient-to-br from-slate-950 via-cyan-950/20 to-slate-950 overflow-hidden"
     >
-      {/* Bubble Background */}
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-900/20 via-transparent to-transparent"></div>
+      
+      {/* Floating Particles Background */}
       <div
-        className={`bubble-container absolute inset-0 z-0 top-0 left-0 w-full h-full overflow-hidden ${
-          isVisible ? "opacity-100" : "opacity-0"
+        className={`absolute inset-0 z-0 top-0 left-0 w-full h-full overflow-hidden ${
+          isVisible ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
         }`}
       >
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 30 }).map((_, i) => (
           <div
             key={i}
-            className="bubble rounded-full bg-[#24CFA6] absolute bottom-[-150px] opacity-60 animate-bubble"
+            className="absolute rounded-full animate-float"
             style={{
-              width: `${20 + Math.random() * 40}px`,
-              height: `${20 + Math.random() * 40}px`,
+              width: `${Math.random() * 6 + 2}px`,
+              height: `${Math.random() * 6 + 2}px`,
+              background: `radial-gradient(circle, ${
+                i % 3 === 0 
+                  ? 'rgba(34, 211, 238, 0.4)' 
+                  : i % 3 === 1 
+                  ? 'rgba(20, 184, 166, 0.4)' 
+                  : 'rgba(6, 182, 212, 0.4)'
+              }, transparent)`,
               left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 10}s`,
-              animationDuration: `${10 + Math.random() * 10}s`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${8 + Math.random() * 12}s`,
             }}
           />
         ))}
@@ -77,7 +90,7 @@ const About = () => {
           <motion.img
             src={selfimg}
             alt="Developer"
-            className="rounded-lg shadow-lg object-cover animate-float hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:border-4 hover:border-[#24CFA6]"
+            className="rounded-lg shadow-lg object-cover animate-float hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] border-2 border-cyan-500/20 hover:border-cyan-500/60"
             style={{ width: "350px", height: "430px" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -87,14 +100,24 @@ const About = () => {
 
         {/* Right Content */}
         <motion.div
-          className="w-full md:w-1/2 p-8 rounded-lg shadow-lg transition-all hover:border-4 hover:border-[#24CFA6] hover:shadow-xl"
+          className="w-full md:w-1/2 p-8 rounded-lg shadow-lg transition-all bg-gradient-to-br from-cyan-900/10 to-teal-900/10 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-indigo-600 dark:text-[#24CFA6] mb-4">
+          <motion.h2 
+            className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(34,211,238,0.5)] mb-4"
+            animate={{ 
+              textShadow: [
+                "0 0 15px rgba(34,211,238,0.5)",
+                "0 0 30px rgba(34,211,238,0.8)",
+                "0 0 15px rgba(34,211,238,0.5)"
+              ]
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
             About Me
-          </h2>
+          </motion.h2>
 
           <p className="text-gray-100 dark:text-gray-300 mb-4 leading-relaxed">
             Hello, I am <strong className="text-2xl">Nikhil Waghade</strong>.
@@ -106,10 +129,10 @@ const About = () => {
           </p>
 
           {/* Colored Separator */}
-          <hr className="my-8 border-t-4 border-[#24CFA6] rounded-full w-full" />
+          <hr className="my-8 border-t-2 border-cyan-500/50 rounded-full w-full shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
 
           {/* Social Links */}
-          <p className="text-lg text-indigo-500 font-semibold mt-6 mb-2">
+          <p className="text-lg text-cyan-400 font-semibold mt-6 mb-2">
             Connect With Me:
           </p>
           <div className="flex items-center gap-6 mt-2 text-xl flex-wrap">
@@ -117,7 +140,7 @@ const About = () => {
               href="https://www.linkedin.com/in/nikhilwaghade"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-purple-600 dark:text-indigo-400 hover:text-[#24CFA6] transition-colors"
+              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors hover:scale-110 duration-300"
             >
               <FaLinkedin /> LinkedIn
             </a>
@@ -125,7 +148,7 @@ const About = () => {
               href="https://wa.me/yourwhatsappnumber"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-green-500 hover:text-[#24CFA6] transition-colors"
+              className="flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors hover:scale-110 duration-300"
             >
               <FaWhatsapp /> WhatsApp
             </a>
@@ -133,7 +156,7 @@ const About = () => {
               href="https://github.com/NikhilWaghade"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-200 dark:text-white hover:text-[#24CFA6] transition-colors"
+              className="flex items-center gap-2 text-gray-200 hover:text-cyan-400 transition-colors hover:scale-110 duration-300"
             >
               <FaGithub /> GitHub
             </a>
@@ -141,7 +164,7 @@ const About = () => {
               href="https://instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-pink-500 hover:text-[#24CFA6] transition-colors"
+              className="flex items-center gap-2 text-pink-400 hover:text-cyan-400 transition-colors hover:scale-110 duration-300"
             >
               <FaInstagram /> Instagram
             </a>
@@ -149,36 +172,85 @@ const About = () => {
         </motion.div>
       </div>
 
-      {/* Skill Bars */}
-      <div className="mt-8 max-w-xl mx-auto">
-        <h4 className="text-2xl font-bold text-center text-purple-500 dark:text-gray-200 mb-6">
-          Work Experience Technologies
-        </h4>
-        {skills.map((skill, index) => (
-          <div key={index} className="mb-4">
-            <div className="flex items-center justify-between mb-1">
-              <div className="flex items-center gap-2">
-                <span className="text-md font-medium text-gray-800 dark:text-gray-200">
-                  {skill.icon}
-                </span>
-                <span className="text-md font-medium text-gray-800 dark:text-gray-200">
-                  {skill.name}
-                </span>
+      {/* Skill Bars - Redesigned */}
+      <div className="mt-16 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 space-y-4"
+        >
+          <motion.h4 
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+            animate={{ 
+              textShadow: [
+                "0 0 15px rgba(34,211,238,0.5)",
+                "0 0 35px rgba(34,211,238,0.8)",
+                "0 0 15px rgba(34,211,238,0.5)"
+              ]
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            Work Experience Technologies
+          </motion.h4>
+          <p className="text-gray-400 text-lg">
+            Technical skills and expertise in modern web development
+          </p>
+        </motion.div>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              className="group relative bg-gradient-to-br from-cyan-900/20 to-teal-900/20 backdrop-blur-sm p-6 rounded-2xl border border-cyan-500/20 transition-all duration-500 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              {/* Background Gradient on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                {/* Header with Icon and Name */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-colors duration-300">
+                      <span className="text-2xl">
+                        {skill.icon}
+                      </span>
+                    </div>
+                    <span className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                      {skill.name}
+                    </span>
+                  </div>
+                  <div className="px-4 py-2 bg-cyan-500/20 rounded-full border border-cyan-400/30">
+                    <span className="text-cyan-300 font-bold text-lg">
+                      {skill.percent}%
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Progress Bar */}
+                <div className="relative w-full h-3 bg-slate-800/50 rounded-full overflow-hidden border border-cyan-500/20">
+                  <motion.div
+                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.5)]"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${skill.percent}%` }}
+                    transition={{ duration: 1.5, delay: 0.3 + index * 0.1, ease: "easeOut" }}
+                  />
+                  {/* Animated Shine Effect */}
+                  <motion.div
+                    className="absolute inset-y-0 w-20 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    initial={{ x: "-100%" }}
+                    animate={{ x: "500%" }}
+                    transition={{ duration: 2, delay: 0.5 + index * 0.1, ease: "easeInOut" }}
+                  />
+                </div>
               </div>
-              <span className="text-md text-indigo-600 dark:text-indigo-400 font-semibold">
-                {skill.percent}%
-              </span>
-            </div>
-            <div className="w-full bg-gray-300 rounded-full h-3 dark:bg-gray-700 overflow-hidden">
-              <motion.div
-                className="h-3 rounded-full bg-[#24CFA6]"
-                initial={{ width: 0 }}
-                animate={{ width: `${skill.percent}%` }}
-                transition={{ duration: 1.5, delay: 0.2 + index * 0.1 }}
-              />
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
