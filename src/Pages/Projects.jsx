@@ -63,10 +63,10 @@ const Projects = () => {
       category: "Web App"
     },
     {
-      name: "Portfolio Website",
+      name: "Restaurant Website",
       imageUrl:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop&q=80",
-      link: "#",
+        "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://restrorent-frontend.vercel.app/",
       github: "https://github.com/NikhilWaghade",
       description: "Modern portfolio with smooth animations and responsive design",
       tech: ["React", "Tailwind CSS", "Framer Motion"],
@@ -97,11 +97,11 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative py-20 px-4 bg-gradient-to-br from-slate-950 via-cyan-950/20 to-slate-950 overflow-hidden"
+      className="relative py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden"
     >
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-900/20 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gray-400/5 via-transparent to-transparent"></div>
       
       {/* Floating Particles Background */}
       <div
@@ -118,10 +118,10 @@ const Projects = () => {
               height: `${Math.random() * 6 + 2}px`,
               background: `radial-gradient(circle, ${
                 i % 3 === 0 
-                  ? 'rgba(34, 211, 238, 0.4)' 
+                  ? 'rgba(255, 255, 255, 0.2)' 
                   : i % 3 === 1 
-                  ? 'rgba(20, 184, 166, 0.4)' 
-                  : 'rgba(6, 182, 212, 0.4)'
+                  ? 'rgba(156, 163, 175, 0.2)' 
+                  : 'rgba(209, 213, 219, 0.2)'
               }, transparent)`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -145,25 +145,25 @@ const Projects = () => {
           <div className="inline-block">
             <div className="flex items-center justify-center gap-3 mb-4">
               <motion.div 
-                className="h-1 w-12 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-500 rounded-full"
+                className="h-1 w-12 bg-gradient-to-r from-transparent via-white to-white rounded-full"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
               ></motion.div>
-              <Code2 className="w-8 h-8 text-cyan-400 animate-pulse" />
+              <Code2 className="w-8 h-8 text-white animate-pulse" />
               <motion.div 
-                className="h-1 w-12 bg-gradient-to-r from-cyan-500 via-cyan-500 to-transparent rounded-full"
+                className="h-1 w-12 bg-gradient-to-r from-white via-white to-transparent rounded-full"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
               ></motion.div>
             </div>
           </div>
           <motion.h2 
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             animate={{ 
               textShadow: [
-                "0 0 20px rgba(34,211,238,0.5)",
-                "0 0 40px rgba(34,211,238,0.8)",
-                "0 0 20px rgba(34,211,238,0.5)"
+                "0 0 20px rgba(255,255,255,0.3)",
+                "0 0 40px rgba(255,255,255,0.5)",
+                "0 0 20px rgba(255,255,255,0.3)"
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
@@ -186,30 +186,30 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="group relative bg-gradient-to-br from-cyan-900/20 to-teal-900/20 backdrop-blur-sm rounded-3xl border border-cyan-500/20 overflow-hidden transition-all duration-500 hover:border-cyan-500/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.3)]"
+              className="group relative bg-gradient-to-br from-white/5 to-gray-400/5 backdrop-blur-sm rounded-3xl border border-white/20 overflow-hidden transition-all duration-500 hover:border-white/50 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]"
               onMouseEnter={() => setActiveProject(index)}
               onMouseLeave={() => setActiveProject(null)}
             >
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Image Container */}
               <div className="relative overflow-hidden h-48 md:h-56">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
                 <img
                   src={project.imageUrl}
                   alt={project.name}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 {/* Category Badge */}
-                <div className="absolute top-4 right-4 z-20 px-3 py-1.5 bg-cyan-500/90 backdrop-blur-sm rounded-full border border-cyan-400/50">
-                  <span className="text-white text-xs font-semibold">{project.category}</span>
+                <div className="absolute top-4 right-4 z-20 px-3 py-1.5 bg-white/80 backdrop-blur-sm rounded-full border border-white/50">
+                  <span className="text-black text-xs font-semibold">{project.category}</span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="relative z-10 p-6 space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
                   {project.name}
                 </h3>
                 
@@ -222,7 +222,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-300 text-xs font-medium"
+                      className="px-3 py-1 bg-white/10 border border-white/30 rounded-full text-white text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -236,7 +236,7 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black rounded-xl font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                       aria-label={`View ${project.name}`}
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -248,7 +248,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center px-4 py-2.5 bg-slate-800/50 hover:bg-slate-700/50 border border-cyan-500/30 hover:border-cyan-500/60 text-cyan-300 rounded-xl font-semibold transition-all duration-300"
+                      className="flex items-center justify-center px-4 py-2.5 bg-black/50 hover:bg-black/70 border border-white/30 hover:border-white/60 text-white rounded-xl font-semibold transition-all duration-300"
                       aria-label={`View ${project.name} code`}
                     >
                       <Github className="w-5 h-5" />
@@ -260,7 +260,7 @@ const Projects = () => {
               {/* Hover Glow Effect */}
               {activeProject === index && (
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent pointer-events-none"
+                  className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent pointer-events-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}

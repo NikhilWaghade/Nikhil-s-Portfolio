@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
 /* Animation for floating (up and down) */
 @keyframes float {
     0% {
@@ -26,7 +21,7 @@
       color: #ffffff;
     }
     50% {
-      color: #24CFA6;
+      color: #9ca3af;
     }
   }
 
@@ -40,7 +35,6 @@
   }
   
   .animated-bg {
-    /* background: linear-gradient(-45deg, #000000, #000000, #24CFA6); */
     background-size: 300% 300%;
     animation: animatedGradient 10s ease infinite;
   }
@@ -50,12 +44,8 @@
     transform: scale(1.05); /* Slight zoom-in on hover */
     transition: transform 0.3s ease-in-out;
   }
-
-
-
   
-  
-  /* // index.css (Bubble Animation Section) */
+  /* Bubble Animation */
   @keyframes bubble {
     0% {
       transform: translateY(0) scale(1);
@@ -71,6 +61,66 @@
     .animate-bubble {
       animation: bubble 10s infinite ease-in;
     }
+  }
+
+  /* Layered Certificate Animations */
+  @keyframes layerReveal {
+    0% {
+      transform: translateY(100px) scale(0.8) rotateX(45deg);
+      opacity: 0;
+      filter: blur(10px);
+    }
+    100% {
+      transform: translateY(0) scale(1) rotateX(0deg);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes cardFloat {
+    0%, 100% {
+      transform: translateY(0) rotateY(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotateY(3deg);
+    }
+  }
+
+  .certificate-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .certificate-card.scroll-active {
+    animation: layerReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .certificate-card:hover {
+    animation: cardFloat 2s ease-in-out infinite;
+  }
+
+  /* Rounded corners animation on scroll */
+  .certificate-image {
+    border-radius: 1rem;
+    transition: border-radius 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .certificate-card.scroll-rounded .certificate-image {
+    border-radius: 50%;
+  }
+
+  /* Glow effect - Black & White theme */
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(156, 163, 175, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(156, 163, 175, 0.3);
+    }
+  }
+
+  .glow-effect {
+    animation: glowPulse 3s ease-in-out infinite;
   }
   
 

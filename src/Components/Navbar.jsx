@@ -46,8 +46,8 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-gradient-to-r from-slate-900/98 via-gray-900/98 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-cyan-500/10 border-b border-cyan-500/20"
-          : "bg-gradient-to-r from-slate-900/90 via-gray-900/90 to-slate-900/90 backdrop-blur-lg"
+          ? "bg-gradient-to-r from-black/98 via-gray-900/98 to-black/98 backdrop-blur-xl shadow-2xl shadow-white/5 border-b border-white/10"
+          : "bg-gradient-to-r from-black/90 via-gray-900/90 to-black/90 backdrop-blur-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,10 +59,10 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               handleNavClick();
             }}
-            className="relative text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent cursor-pointer group transition-all duration-300 hover:scale-110"
+            className="relative text-2xl md:text-3xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent cursor-pointer group transition-all duration-300 hover:scale-110"
           >
-            <span className="relative z-10 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Nikhil's</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full group-hover:w-full transition-all duration-500 shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
+            <span className="relative z-10 text-white">Nikhil's</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full group-hover:w-full transition-all duration-500 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
           </Link>
 
           {/* Desktop Menu with enhanced design */}
@@ -73,8 +73,8 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                 onClick={() => scrollToSection(section)}
                 className={`relative px-5 py-2.5 text-sm lg:text-base font-semibold transition-all duration-300 rounded-xl group ${
                   activeSection === section
-                    ? "text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.3)]"
-                    : "text-gray-300 hover:text-cyan-300"
+                    ? "text-white shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                    : "text-gray-400 hover:text-white"
                 }`}
               >
                 <span className="relative z-10">
@@ -84,16 +84,16 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                 {/* Active indicator with glow */}
                 {activeSection === section && (
                   <>
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)] animate-pulse"></span>
-                    <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-teal-500/20 to-cyan-500/20 rounded-xl blur-sm"></span>
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse"></span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-white/10 via-gray-300/10 to-white/10 rounded-xl blur-sm"></span>
                   </>
                 )}
                 
                 {/* Hover effect with gradient */}
-                <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/15 via-teal-500/15 to-cyan-500/15 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-white/5 via-gray-300/5 to-white/5 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
                 
                 {/* Bottom border on hover with glow */}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full group-hover:w-4/5 transition-all duration-500 shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full group-hover:w-4/5 transition-all duration-500 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
               </button>
             ))}
           </div>
@@ -102,7 +102,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
           <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="relative p-2.5 text-cyan-300 text-2xl focus:outline-none hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-teal-500/20 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+              className="relative p-2.5 text-white text-2xl focus:outline-none hover:bg-gradient-to-r hover:from-white/10 hover:to-gray-300/10 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
               aria-label="Toggle menu"
             >
               <span className={`transition-transform duration-300 ${menuOpen ? 'rotate-90' : ''}`}>
@@ -119,15 +119,15 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-gradient-to-b from-slate-800/98 to-gray-900/98 backdrop-blur-xl border-t border-cyan-500/20 px-4 py-6 space-y-2 shadow-[inset_0_10px_30px_rgba(0,0,0,0.3)]">
+        <div className="bg-gradient-to-b from-gray-900/98 to-black/98 backdrop-blur-xl border-t border-white/10 px-4 py-6 space-y-2 shadow-[inset_0_10px_30px_rgba(0,0,0,0.5)]">
           {navItems.map((section, index) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}
               className={`block w-full text-left px-5 py-3.5 rounded-xl font-semibold transition-all duration-300 transform ${
                 activeSection === section
-                  ? "bg-gradient-to-r from-cyan-500/25 via-teal-500/25 to-cyan-500/25 text-cyan-300 translate-x-3 shadow-[0_0_20px_rgba(34,211,238,0.2)] border border-cyan-500/30"
-                  : "text-gray-300 hover:bg-gradient-to-r hover:from-cyan-500/15 hover:to-teal-500/15 hover:text-cyan-200 hover:translate-x-3 border border-transparent hover:border-cyan-500/20"
+                  ? "bg-gradient-to-r from-white/15 via-gray-300/15 to-white/15 text-white translate-x-3 shadow-[0_0_20px_rgba(255,255,255,0.15)] border border-white/20"
+                  : "text-gray-400 hover:bg-gradient-to-r hover:from-white/5 hover:to-gray-300/5 hover:text-white hover:translate-x-3 border border-transparent hover:border-white/10"
               }`}
               style={{
                 transitionDelay: menuOpen ? `${index * 50}ms` : "0ms",
@@ -135,7 +135,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
             >
               <span className="flex items-center">
                 {activeSection === section && (
-                  <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
+                  <span className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
                 )}
                 {section === "hero" ? "Home" : section.charAt(0).toUpperCase() + section.slice(1)}
               </span>

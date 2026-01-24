@@ -36,10 +36,10 @@ const Contact = () => {
   }, [popup.show]);
 
   return (
-    <section id="contact" className="relative py-20 px-4 bg-gradient-to-br from-slate-950 via-cyan-950/20 to-slate-950 overflow-hidden">
+    <section id="contact" className="relative py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-900/20 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gray-400/5 via-transparent to-transparent"></div>
 
       {/* Floating Particles Background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -52,10 +52,10 @@ const Contact = () => {
               height: `${Math.random() * 6 + 2}px`,
               background: `radial-gradient(circle, ${
                 i % 3 === 0 
-                  ? 'rgba(34, 211, 238, 0.4)' 
+                  ? 'rgba(255, 255, 255, 0.2)' 
                   : i % 3 === 1 
-                  ? 'rgba(20, 184, 166, 0.4)' 
-                  : 'rgba(6, 182, 212, 0.4)'
+                  ? 'rgba(156, 163, 175, 0.2)' 
+                  : 'rgba(209, 213, 219, 0.2)'
               }, transparent)`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -85,15 +85,15 @@ const Contact = () => {
           className="mb-12 space-y-4"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <Mail className="w-10 h-10 text-cyan-400 animate-pulse" />
+            <Mail className="w-10 h-10 text-white animate-pulse" />
           </div>
           <motion.h2 
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             animate={{ 
               textShadow: [
-                "0 0 20px rgba(34,211,238,0.5)",
-                "0 0 40px rgba(34,211,238,0.8)",
-                "0 0 20px rgba(34,211,238,0.5)"
+                "0 0 20px rgba(255,255,255,0.3)",
+                "0 0 40px rgba(255,255,255,0.5)",
+                "0 0 20px rgba(255,255,255,0.3)"
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
@@ -112,7 +112,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6 bg-gradient-to-br from-cyan-900/20 to-teal-900/20 backdrop-blur-sm p-8 rounded-3xl border border-cyan-500/20 shadow-[0_0_30px_rgba(34,211,238,0.1)]"
+          className="space-y-6 bg-gradient-to-br from-white/5 to-gray-400/5 backdrop-blur-sm p-8 rounded-3xl border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
           noValidate
         >
           <input
@@ -120,7 +120,7 @@ const Contact = () => {
             name="user_name"
             placeholder="Your Name"
             required
-            className="w-full px-6 py-4 rounded-xl border-2 border-cyan-500/30 bg-slate-900/50 text-white placeholder:text-gray-400 focus:border-cyan-500/60 focus:outline-none focus:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300"
+            className="w-full px-6 py-4 rounded-xl border-2 border-white/30 bg-black/50 text-white placeholder:text-gray-400 focus:border-white/60 focus:outline-none focus:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
             aria-label="Your Name"
           />
           <input
@@ -128,7 +128,7 @@ const Contact = () => {
             name="user_email"
             placeholder="Your Email"
             required
-            className="w-full px-6 py-4 rounded-xl border-2 border-cyan-500/30 bg-slate-900/50 text-white placeholder:text-gray-400 focus:border-cyan-500/60 focus:outline-none focus:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300"
+            className="w-full px-6 py-4 rounded-xl border-2 border-white/30 bg-black/50 text-white placeholder:text-gray-400 focus:border-white/60 focus:outline-none focus:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
             aria-label="Your Email"
           />
           <textarea
@@ -136,14 +136,14 @@ const Contact = () => {
             placeholder="Your Message"
             required
             rows="6"
-            className="w-full px-6 py-4 rounded-xl border-2 border-cyan-500/30 bg-slate-900/50 text-white placeholder:text-gray-400 focus:border-cyan-500/60 focus:outline-none focus:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 resize-none"
+            className="w-full px-6 py-4 rounded-xl border-2 border-white/30 bg-black/50 text-white placeholder:text-gray-400 focus:border-white/60 focus:outline-none focus:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300 resize-none"
             aria-label="Your Message"
           />
           <motion.button
             type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white text-lg font-bold rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] flex items-center justify-center gap-2"
+            className="w-full px-8 py-4 bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black text-lg font-bold rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2"
           >
             <Send className="w-5 h-5 animate-pulse" />
             <span>Send Message</span>
