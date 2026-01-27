@@ -1,72 +1,92 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" href="src\assets\logo.png" />
-    <!-- Basic SEO -->
-    <title>Nikhil Waghade | Full Stack Developer (MERN) | Portfolio</title>
-
+    <!-- Charset -->
     <meta charset="UTF-8" />
+
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Favicon (from public folder) -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- SEO Title -->
+    <title>Nikhil Waghade | Full Stack MERN Developer Portfolio</title>
+
+    <!-- SEO Description -->
     <meta
       name="description"
-      content="Nikhil Waghade is a Full Stack Developer skilled in MERN stack. Explore projects, skills, GitHub, LinkedIn, and contact details."
+      content="Nikhil Waghade is a Full Stack MERN Developer skilled in React, Node.js, MongoDB. Explore real-world projects, skills, and contact details."
     />
 
-    <meta
-      name="keywords"
-      content="Nikhil Waghade, Full Stack Developer, MERN Stack Developer, React Developer, Node.js Developer, Web Developer Portfolio"
-    />
-
+    <!-- Author & Robots -->
     <meta name="author" content="Nikhil Waghade" />
     <meta name="robots" content="index, follow" />
 
     <!-- Google Site Verification -->
-   <meta name="google-site-verification" content="Spn1J9J1rz-8rR3-QYKZ1JNo3LIwN569Hikw494atX0" />
+    <meta
+      name="google-site-verification"
+      content="Spn1J9J1rz-8rR3-QYKZ1JNo3LIwN569Hikw494atX0"
+    />
+
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RJ9KD8S3BF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-RJ9KD8S3BF");
+    </script>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nikhil-s-portfolio-one.vercel.app/" />
 
-    <!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+    <!-- Open Graph (LinkedIn / WhatsApp / Facebook) -->
+    <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Nikhil Waghade | Full Stack Developer Portfolio"
+      content="Nikhil Waghade | Full Stack MERN Developer"
     />
     <meta
       property="og:description"
-      content="Full Stack Developer (MERN) showcasing real-world projects, skills, and experience."
+      content="Full Stack MERN Developer portfolio showcasing real-world projects, skills, and experience."
     />
-    <meta property="og:type" content="website" />
     <meta
       property="og:url"
       content="https://nikhil-s-portfolio-one.vercel.app/"
     />
     <meta
       property="og:image"
-       content="https://nikhil-s-portfolio-one.vercel.app/profile.jpg"
+      content="https://nikhil-s-portfolio-one.vercel.app/preview.png"
     />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Nikhil Waghade | Full Stack Developer"
+      content="Nikhil Waghade | Full Stack MERN Developer"
     />
     <meta
       name="twitter:description"
-      content="MERN Stack Full Stack Developer Portfolio with real projects."
+      content="MERN Stack Full Stack Developer portfolio with real projects."
     />
     <meta
       name="twitter:image"
       content="https://nikhil-s-portfolio-one.vercel.app/preview.png"
     />
 
-    <!-- Social Profile Links (SEO hint) -->
+    <!-- Social Profile Links -->
     <link rel="me" href="https://www.linkedin.com/in/nikhil-waghade/" />
     <link rel="me" href="https://github.com/NikhilWaghade" />
     <link rel="me" href="https://www.instagram.com/nikkuwaghade91221/" />
     <link rel="me" href="https://x.com/Nikhil031003" />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

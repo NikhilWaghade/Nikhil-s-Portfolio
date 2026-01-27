@@ -128,6 +128,23 @@ const About = () => {
             <strong>Connect Shiksha & Excellup</strong>.
           </p>
 
+          <a
+            href="/Nikhilresume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window.gtag === "function") {
+                window.gtag("event", "resume_click", {
+                  event_category: "engagement",
+                  event_label: "Resume PDF",
+                });
+              }
+            }}
+            className="inline-flex items-center gap-2 px-6 py-3 mt-4 rounded-lg bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 hover:border-white/50 hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+          >
+            Download Resume
+          </a>
+
           {/* Colored Separator */}
           <hr className="my-8 border-t-2 border-white/30 rounded-full w-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
 
